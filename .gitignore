@@ -11,6 +11,7 @@ __pycache__/
 *.pyd
 
 # Python environment directories
+.Esp32/
 venv/
 env/
 .venv/

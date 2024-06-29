@@ -19,7 +19,7 @@ sta_if.connect(
 
 # A connection loop
 while not sta_if.isconnected():
-  print(".", end="")
-  time.sleep(0.1)
+    print(".", end="")
+    time.sleep(0.1)
 
 print(" Connected!")
