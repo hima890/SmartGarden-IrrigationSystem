@@ -1,0 +1,35 @@
+# Py cash
+.*cache/
+
+# Ignore the resources folder
+resources/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python environment directories
+venv/
+env/
+.venv/
+pip-wheel-metadata/
+
+# Local development settings (if applicable)
+*.env
+
+# IDE or editor settings
+.vscode/
+.idea/
+*.swp
+
+# Compiled Python files
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
