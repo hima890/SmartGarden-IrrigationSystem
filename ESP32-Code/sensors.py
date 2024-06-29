@@ -36,11 +36,6 @@ class SoilMoistureSensor:
     def read_moisture(self):
         """
         Read the data from the SoilMoistureSensor.
-        Attributes:
-            No attributes
-        """
-        """
-        Read the data from the SoilMoistureSensor.
 
         Args:
             No args.
