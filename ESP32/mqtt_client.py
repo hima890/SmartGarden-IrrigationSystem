@@ -31,6 +31,7 @@ client = MQTTClient(
     port=MQTT_PORT
     )
 
+
 # MQTT Callback Setup
 # Wrapper Function (on_message_callback)
 def on_message_callback(topic, msg):
@@ -48,6 +49,7 @@ def on_message_callback(topic, msg):
     """
     on_message(topic, msg, pump)
 
+
 # Set the callback to the wrapper Function
 client.set_callback(on_message_callback)
 
@@ -59,6 +61,7 @@ try:
 except Exception as e:
     print(f"Failed to connect to MQTT broker: {e}")
 
+
 # Main loop function
 def main_loop():
     while True:
@@ -66,6 +69,7 @@ def main_loop():
         check_messages(client)
         # Adjust the interval as needed
         time.sleep(60)
+
 
 if __name__ == '__main__':
     main_loop()
