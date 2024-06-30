@@ -1,8 +1,13 @@
-# Configuration file for pin assignments and other constants
+""""Configuration file for pin assignments and other constants"""
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Wi-Fi settings
-WIFI_SSID = 'Wokwi-GUEST'
-WIFI_PASSWORD = ''
+WIFI_SSID = os.getenv('WIFI_SSID')
+WIFI_PASSWORD = os.getenv('WIFI_PASSWORD')
 
 # Sensors pin assignments
 SOIL_MOISTURE_1_PIN = 32
@@ -14,9 +19,10 @@ SOIL_MOISTURE_4_PIN = 35
 VALVE_PIN = 25
 
 # MQTT settings
-MQTT_BROKER = 'bcfe325a54b74177a07b98e7235cb5ea.s1.eu.hivemq.cloud'
-MQTT_PORT = 8883
-MQTT_CLIENT_ID_ESP32 = 'ESP32_Client'
-MQTT_CLIENT_ID_FLASK = 'Flask_Server'
-MQTT_TOPIC_SENSOR = 'sensor/moisture'
-MQTT_TOPIC_CONTROL = 'valve/control'
+MQTT_BROKER = os.getenv('MQTT_BROKER')
+MQTT_PORT = os.getenv('MQTT_PORT')
+MQTT_CLIENT_ID_ESP32 = os.getenv('MQTT_CLIENT_ID_ESP32')
+MQTT_CLIENT_ID_FLASK = os.getenv('MQTT_CLIENT_ID_FLASK')
+MQTT_TOPIC_SENSOR = os.getenv('MQTT_TOPIC_SENSOR')
+MQTT_TOPIC_CONTROL = os.getenv('MQTT_TOPIC_CONTROL')
+

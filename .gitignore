@@ -1,5 +1,7 @@
 # Py cash
 .*cache/
+# Environment variables file
+.env
 
 # Ignore the resources folder
 resources/

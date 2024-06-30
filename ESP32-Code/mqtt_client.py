@@ -1,5 +1,5 @@
-""" MQTT client for sending sensor data, calculating averages,
-and responding to commands
+""" MQTT client for sending sensor data,
+calculating averages, and responding to commands.
 """
 import time
 import ujson
@@ -7,6 +7,8 @@ from umqtt.simple import MQTTClient
 from sensors import SoilMoistureSensor
 from pump import Pump
 from utility.on_message_function import on_message
+from utility.send_sensor_data_function import send_sensor_data
+from utility.check_messages_function import check_messages
 from config import (MQTT_CLIENT_ID_ESP32,
                     MQTT_BROKER,
                     MQTT_PORT,
@@ -57,3 +59,13 @@ try:
 except Exception as e:
     print(f"Failed to connect to MQTT broker: {e}")
 
+# Main loop function
+def main_loop():
+    while True:
+        send_sensor_data(sensors_data_reading, sensors_data_avreg, pump_status)
+        check_messages(client)
+        # Adjust the interval as needed
+        time.sleep(60)
+
+if __name__ == '__main__':
+    main_loop()
