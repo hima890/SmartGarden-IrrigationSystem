@@ -1,8 +1,0 @@
-How MQTT Works
-MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe network protocol that transports messages between devices. It's designed for low-bandwidth, high-latency, or unreliable networks, making it ideal for IoT applications.
-
-Key Concepts:
-Broker: The central server that handles message routing. Clients connect to the broker to publish messages to topics or subscribe to topics to receive messages.
-Client: Any device (e.g., ESP32, server) that connects to the broker. Clients can both publish and subscribe to topics.
-Topic: A string that represents a message channel. Clients publish messages to topics and subscribe to topics to receive messages. Topics can be hierarchical, using slashes (e.g., sensor/moisture).
-Publish/Subscribe: The model where clients publish messages to topics and subscribe to topics to receive messages. This decouples the sender and receiver, enhancing scalability and flexibility.
