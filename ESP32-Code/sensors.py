@@ -15,23 +15,23 @@ class SoilMoistureSensor:
     This class serves as un interface with soil moisture sensors.
     It provides attributes and methods to intract with the senors.
     """
-    def __init__(self, pin):
+    def __init__(self):
         """
         Initializes a new instance of the SoilMoistureSensor class.
         Attributes:
             adc : Un ADC object from machine lib.
         """
         # Set the Adc pins
-        self.adc_sensor1 = ADC(SOIL_MOISTURE_1_PIN)
-        self.adc_sensor2 = ADC(SOIL_MOISTURE_2_PIN)
-        self.adc_sensor3 = ADC(SOIL_MOISTURE_3_PIN)
-        self.adc_sensor4 = ADC(SOIL_MOISTURE_4_PIN)
+        self.__adc_sensor1 = ADC(SOIL_MOISTURE_1_PIN)
+        self.__adc_sensor2 = ADC(SOIL_MOISTURE_2_PIN)
+        self.__adc_sensor3 = ADC(SOIL_MOISTURE_3_PIN)
+        self.__adc_sensor4 = ADC(SOIL_MOISTURE_4_PIN)
 
         # Configure ADC to measure 0-3.3V
-        self.adc_sensor1.atten(ADC.ATTN_11DB)
-        self.adc_sensor2.atten(ADC.ATTN_11DB)
-        self.adc_sensor3.atten(ADC.ATTN_11DB)
-        self.adc_sensor4.atten(ADC.ATTN_11DB)
+        self.__adc_sensor1.atten(ADC.ATTN_11DB)
+        self.__adc_sensor2.atten(ADC.ATTN_11DB)
+        self.__adc_sensor3.atten(ADC.ATTN_11DB)
+        self.__adc_sensor4.atten(ADC.ATTN_11DB)
 
     def read_moisture(self):
         """

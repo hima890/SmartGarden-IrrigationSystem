@@ -10,16 +10,19 @@ class Pump:
     This class serves as un interface with water pump.
     It provides attributes and methods to intract with the water pump relay.
     """
-    def __init__(self, pin):
+    def __init__(self):
         """
         Initializes a new instance of the Pump class.
         Attributes:
-            Pin(int) : Un integer pin number.
+            valve(object) : A machine object to control the MCU pins.
+            status(string): A string value track the pump current status.
         """
         # Set the pin mode (output)
-        self.valve = Pin(pin, Pin.OUT)
+        self.valve = Pin(VALVE_PIN, Pin.OUT)
         # Init the pin with off state(0)
         self.valve.off()
+        # Set the pump status
+        self.status = "off"
 
     def open(self):
         """
@@ -32,6 +35,7 @@ class Pump:
             No return.
         """
         self.valve.on()
+        self.status = "on"
 
     def close(self):
         """
@@ -44,3 +48,4 @@ class Pump:
             No return.
         """
         self.valve.off()
+        self.status = "off"
