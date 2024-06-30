@@ -1,0 +1,7 @@
+machine==0.0.1
+network==0.1
+pkg_resources==0.0.0
+pycrypto==2.6.1
+python-dotenv==1.0.1
+ujson==5.10.0
+urequests==0.1.2
